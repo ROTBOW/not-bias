@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"/>
+    <link rel="stylesheet" href="./styles/scanlines.css"/>
+    <link rel="stylesheet" href="./styles/index.css"/>
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <title>idk what this does</title>
+</head>
+<body class="crt">
+   <py-config>
+    [[fetch]]
+    files = ["./simple.py", './data.py', './core.py']
+   </py-config>
+    
+    <py-script>
+        from data import items
+        from core import Core
+        from js import Audio
+
+        def get_text(idx):
+            return items[idx].replace('\n', '<br/>')
+
+        def refresh(text):
+            ele = Element('py-data')
+            ele.element.innerHTML = text
+
+        game = Core(refresh)
+
+
+        def handle_start():
+            # putput = Element('pos-id').value
+            # game.update(putput)
+            sound = Audio.new('assets/sounds/Rain.mp3')
+            sound.play()
+            Element('button-wrapper').add_class('hide')
+            Element('sound-button-on').remove_class('hide')
+            refresh(get_text(0))
+
+        def handle_volume(switch):
+            if switch:
+                show = 'sound-button-on'
+                hide = 'sound-button-off'
+            else:
+                show = 'sound-button-off'
+                hide = 'sound-button-on'
+
+            Element(show).remove_class('hide')
+            Element(hide).add_class('hide')
+
+        # refresh('Loading...')
+    </py-script>
+    <!-- pyscript.write('py-data', show()) -->
+
+    <!-- <h2>Idle typing</h2> -->
+
+    <div id="sound-buttons">
+        <img src="assets/svgs/volume_on.svg" class="hide" id="sound-button-on"/>
+        <img src="assets/svgs/volume_off.svg" class="hide" id="sound-button-off"/>
+    </div>
+
+    <div id="py-data"></div>
+
+    <div class="button-wrapper" id="button-wrapper">
+        <button type="submit" id="button-id" py-click="handle_start()">Start</button>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+* {
+    background-color: black;
+    color: #41FF00;
+}
+
+#sound-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#sound-buttons img {
+    width: 40px;
+}
+
+
+#py-data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+    font-size: 28px;
+}
+
+#button-wrapper {
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hide {
+    display: none !important;
+}

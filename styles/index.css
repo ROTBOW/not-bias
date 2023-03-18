@@ -6,12 +6,39 @@
 #sound-buttons {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 #sound-buttons img {
     width: 40px;
+    cursor: pointer;
 }
 
+.slider {
+    width: 5rem;
+    appearance: none;
+    height: 1rem;
+    background: black;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: .2s;
+    border: dashed 2px #41FF00;
+    margin-right: 0.1rem;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 10px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    background: #40ff00; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
 
 #py-data {
     display: flex;
@@ -19,6 +46,12 @@
     justify-content: center;
     margin-top: 4rem;
     font-size: 28px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; 
 }
 
 #button-wrapper {

@@ -13,53 +13,77 @@
 <body class="crt">
    <py-config>
     [[fetch]]
-    files = ["./simple.py", './data.py', './core.py']
+    files = ['./data.py']
    </py-config>
     
     <py-script>
-        from data import items
-        from core import Core
+        from data import quotes
         from js import Audio
+        import asyncio
+        from random import random
 
-        def get_text(idx):
-            return items[idx].replace('\n', '<br/>')
+        RAIN = Audio.new('assets/sounds/Rain.mp3')
+
+        def key():
+            k = Audio.new('assets/sounds/Key.mp3')
+            k.volume = 0.3
+            k.play()
+
+        def get_text():
+            line = quotes[int(random()*len(quotes))]
+            res = list()
+            for i in range(len(line)):
+                if line[i] == '\n':
+                    res.append('<br/>')
+                else:
+                    res += line[i]
+            return res
 
         def refresh(text):
             ele = Element('py-data')
             ele.element.innerHTML = text
 
-        game = Core(refresh)
+        async def write_out(res):
+            text = ''
+            for i in range(len(res)):
+                text += res[i]
+                refresh(text)
+                if res[i] not in {'<br/>', ' '} and not RAIN.muted:
+                    key()
+                await asyncio.sleep(random()*0.3)
 
+        async def remove(): # will remove text for the next one.
+            pass
 
         def handle_start():
-            # putput = Element('pos-id').value
-            # game.update(putput)
-            sound = Audio.new('assets/sounds/Rain.mp3')
-            sound.play()
+            RAIN.volume = 0.5
+            RAIN.play()
             Element('button-wrapper').add_class('hide')
             Element('sound-button-on').remove_class('hide')
-            refresh(get_text(0))
+            Element('rain-volume-slider').remove_class('hide')
+            asyncio.ensure_future(main())
 
         def handle_volume(switch):
-            if switch:
-                show = 'sound-button-on'
-                hide = 'sound-button-off'
-            else:
-                show = 'sound-button-off'
-                hide = 'sound-button-on'
+            Element(f'sound-button-{"on" if switch else "off"}').remove_class('hide')
+            Element(f'sound-button-{"off" if switch else "on"}').add_class('hide')
+            RAIN.muted = not switch
 
-            Element(show).remove_class('hide')
-            Element(hide).add_class('hide')
+        def handle_rain_volume_change():
+            RAIN.volume = Element('rain-volume-slider').value
+            handle_volume(True)
+            
+        async def main():
+            while True:
+                await write_out(get_text())
+                await asyncio.sleep(5)
 
-        # refresh('Loading...')
+
     </py-script>
-    <!-- pyscript.write('py-data', show()) -->
-
-    <!-- <h2>Idle typing</h2> -->
 
     <div id="sound-buttons">
-        <img src="assets/svgs/volume_on.svg" class="hide" id="sound-button-on"/>
-        <img src="assets/svgs/volume_off.svg" class="hide" id="sound-button-off"/>
+        <input type="range" min="0.01" max="1" step="0.01" value="0.5" class="slider hide" id="rain-volume-slider" py-change="handle_rain_volume_change()">        
+        <img src="assets/svgs/volume_on.svg" class="hide" id="sound-button-on" py-click="handle_volume(False)"/>
+        <img src="assets/svgs/volume_off.svg" class="hide" id="sound-button-off" py-click="handle_volume(True)"/>
     </div>
 
     <div id="py-data"></div>

@@ -173,7 +173,7 @@ quotes = [
     So you learn to love
     Yourself too''',
     
-    '''i don't know to forget you
+    '''i don't want to forget you
     but I don't know how to
     think about you
     without it hurting...''',

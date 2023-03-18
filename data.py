@@ -148,7 +148,7 @@ quotes = [
     we will meet each other again
     for the first time.
     
-    i hope nex time we won't be an almost.''',
+    i hope next time we won't be an almost.''',
     
     '''sometimes i wish
     i never met you

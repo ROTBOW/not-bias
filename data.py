@@ -213,5 +213,45 @@ quotes = [
     
     why does someone leave
     who once said
-    would stay forever?'''
+    would stay forever?''',
+    
+    '''i fought
+    to keep us together.
+    
+    some days it felt
+    you were ready
+    to let me go.
+    
+    why didn't you fight for us.
+    why didn't i realize
+    how willing you would be
+    to let go of me.''',
+    
+    '''it's weird after a breakup
+    my phone doesn't know we broke up
+    
+    it keeps suggesting i text you good morning
+    like i did every morning
+    
+    your house is always at the top of my gps
+    when i get in my car
+    
+    it alwayas shows me pictures of you
+    i don't know how to tell it
+    you're not here anymore.''',
+    
+    '''i'm not sure if you already moved on
+    maybe, you moved on quickly from the one before me
+    i guess i'm prideful for thinking that i'm different to you
+    i'll never know
+    
+    it's been weeks now
+    do you regret ending us?
+    i'll never ask.''',
+    
+    '''i remember the night you told me
+    you couldn't imagine life without me
+    i didn't say it then but i thought the same about you
+    
+    i guess we don't have to imagine now.'''
 ]

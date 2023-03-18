@@ -24,7 +24,7 @@ quotes = [
     with you
     maybe because your eyes
     remind me of the nights we spent together
-    i cant look in the eyes i once saw a future together in
+    i cant look in the eyes i once saw a future in
     and pretend to see nothing''',
     
     '''i thought a love like ours would last a lifetime.
@@ -133,7 +133,7 @@ quotes = [
     '''you came into my world
     made me develop feelings for you
     and then you left
-    you left left as though my feelings would leave as quickly as you
+    you left as though my feelings would leave as quickly as you
     
     and i sort of wish they did.''',
     

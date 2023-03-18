@@ -236,13 +236,13 @@ quotes = [
     your house is always at the top of my gps
     when i get in my car
     
-    it alwayas shows me pictures of you
+    it always shows me pictures of you
     i don't know how to tell it
     you're not here anymore.''',
     
     '''i'm not sure if you already moved on
     maybe, you moved on quickly from the one before me
-    i guess i'm prideful for thinking that i'm different to you
+    i guess i'm prideful for thinking that i'm different than him
     i'll never know
     
     it's been weeks now
@@ -251,7 +251,15 @@ quotes = [
     
     '''i remember the night you told me
     you couldn't imagine life without me
+    you wrote it on my phone notes
     i didn't say it then but i thought the same about you
     
-    i guess we don't have to imagine now.'''
+    i guess we don't have to imagine now.''',
+    
+    '''i hoped that maybe
+    dating other women
+    would make me forget you
+    
+    but i can't look at them
+    and not look for you'''
 ]

@@ -47,7 +47,7 @@ quotes = [
     if not a ghost?
     
     i see us there smiling -
-    and all it does it haunt me.''', 
+    and all it does is haunt me.''', 
     
     '''meeting you was fate.
     becoming your friend was a choice

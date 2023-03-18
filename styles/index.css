@@ -38,7 +38,13 @@
     height: 15px; /* Slider handle height */
     background: #40ff00; /* Green background */
     cursor: pointer; /* Cursor on hover */
-  }
+}
+
+@media only screen and (max-width: 800px) {
+    #py-data {
+        margin-left: 1rem;
+    }
+}
 
 #py-data {
     display: flex;

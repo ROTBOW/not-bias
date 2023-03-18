@@ -114,7 +114,9 @@ quotes = [
     '''for you i was a chapter,
     for me you were the book.''',
     
-    '''And why shouldn't I love you like you are everything I have ever wanted from this life.''',
+    '''And why shouldn't I love you
+    like you are everything
+    I have ever wanted from this life.''',
     
     '''it's kinda weird that
     we don't exist
@@ -158,7 +160,7 @@ quotes = [
     
     '''I just wanted you to know
     That I'll never care
-    how dar you pushed me away
+    how far you pushed me away
     Because when I told you
     That I would stay
     I meant it
@@ -204,5 +206,12 @@ quotes = [
     but somehow i received both
     you loved my heart
     
-    and then you broke it'''
+    and then you broke it''',
+    
+    '''all i could ask myself that day
+    was why
+    
+    why does someone leave
+    who once said
+    would stay forever?'''
 ]

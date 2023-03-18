@@ -13,7 +13,7 @@
 <body class="crt">
    <py-config>
     terminal = false
-    
+
     [[fetch]]
     files = ['./data.py']
    </py-config>
@@ -51,7 +51,7 @@
             text = ''
             for i in range(len(res)):
                 text += res[i]
-                refresh(text)
+                refresh(text + '|')
                 if res[i] not in {'<br/>', ' '} and not RAIN.muted:
                     try:
                         key()
@@ -59,8 +59,14 @@
                         pass
                 await asyncio.sleep(random()*0.3)
 
-        async def remove(): # will remove text for the next one.
-            pass
+            return res
+
+        async def remove(line): # will remove text for the next one.
+            key()
+            for i in range(len(line)-1, -1, -1):
+                refresh(''.join(line[:i]) + '|')
+                await asyncio.sleep(i * 0.001 if i * 0.001 < 0.15 else 0.15)
+            
 
         def handle_start():
             RAIN.volume = 0.5
@@ -81,8 +87,10 @@
             
         async def main():
             while True:
-                await write_out(get_text())
-                await asyncio.sleep(5)
+                line = await write_out(get_text())
+                await asyncio.sleep(1.5)
+                await remove(line)
+                await asyncio.sleep(.5)
 
 
     </py-script>

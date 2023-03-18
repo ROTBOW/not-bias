@@ -23,7 +23,7 @@
         from random import random
         import warnings
 
-        warnings.filterwarnings('ignore')
+        warnings.filterwarnings("ignore")
 
         RAIN = Audio.new('assets/sounds/Rain.mp3')
         RAIN.loop = True
@@ -53,7 +53,10 @@
                 text += res[i]
                 refresh(text)
                 if res[i] not in {'<br/>', ' '} and not RAIN.muted:
-                    key()
+                    try:
+                        key()
+                    except expression as e:
+                        pass
                 await asyncio.sleep(random()*0.3)
 
         async def remove(): # will remove text for the next one.

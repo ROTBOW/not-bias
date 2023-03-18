@@ -12,6 +12,8 @@
 </head>
 <body class="crt">
    <py-config>
+    terminal = false
+    
     [[fetch]]
     files = ['./data.py']
    </py-config>
@@ -21,9 +23,7 @@
         from js import Audio
         import asyncio
         from random import random
-        import warnings
-
-        warnings.filterwarnings("ignore")
+        
 
         RAIN = Audio.new('assets/sounds/Rain.mp3')
         RAIN.loop = True

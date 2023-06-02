@@ -142,7 +142,10 @@ quotes = [
     '''I have late night conversations
     with the moon,
     he tells me about the sun
-    and I tell him about you.''',
+    and I tell him about you.
+    
+    The moon will never be with the sun,
+    and I will never be with you again.''',
     
     '''i pray that someday
     we will meet each other again
@@ -251,7 +254,7 @@ quotes = [
     
     '''i remember the night you told me
     you couldn't imagine life without me
-    you wrote it on my phone notes
+    you wrote it on my phone
     i didn't say it then but i thought the same about you
     
     i guess we don't have to imagine now.''',

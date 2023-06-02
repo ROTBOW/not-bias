@@ -74,7 +74,7 @@
             Element('button-wrapper').add_class('hide')
             Element('sound-button-on').remove_class('hide')
             Element('rain-volume-slider').remove_class('hide')
-            asyncio.ensure_future(main())
+            asyncio.create_task(main())
 
         def handle_volume(switch):
             Element(f'sound-button-{"on" if switch else "off"}').remove_class('hide')
